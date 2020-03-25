@@ -1,6 +1,5 @@
 <?php
 namespace Anton;
-include('Validator.php');
 
 class Collector
 {
