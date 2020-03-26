@@ -76,6 +76,7 @@ class Collector
     public function run()
     {
         try{
+            $anton = [];
             $projects = $this->getJsonFileArray($this->folders['config'].'/projects.json');
             if ($projects) {
                 foreach ($projects as $key => $project) {
@@ -112,7 +113,7 @@ class Collector
         echo 'something went wrong';
     }
 
-    public function getJsonFileArray(string $filename):?array{
+    public function getJsonFileArray(string $filename){
         if (file_exists($filename)) {
             $file = file_get_contents($filename);
             return json_decode($file, true);
