@@ -84,6 +84,7 @@ class Collector
 
                     $tmp = $this->getJsonFileArray($this->folders['config']. '/projects.json');
                     $this->cloneProjectRepo($key, $tmp[$key]);
+                    exec('cd '. $this->folders['config']. '/projects/'.$key.' && git pull 2>&1');
                     
                     $projectConfig = $this->getJsonFileArray($this->folders['config']. '/projects/'.$key.'/.anton/config.json');
 
